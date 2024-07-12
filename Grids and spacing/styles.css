@@ -1,0 +1,7 @@
+.anatomyExplained{
+    display: flex;
+}
+
+.anatomyExplained > ol {
+    font-size: 25px;
+}
