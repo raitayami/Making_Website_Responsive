@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout with Flexbox</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Flexbox</h1>
+
+    <h2>What is flexbox</h2>
+
+    <p>You have seen that, to position elements, you can use box model and CSS display properties</p>
+    <p>Flexbox, or a flexible box layout is a tool that greatly simplifies how to position elements</p>
+
+    <p>There are 2 important components to a flexbox layout</p>
+    <ol>
+        <li>Flex container</li>
+        <ul>
+            <li>This is an element that contains flex items. All direct child elements of a flex container are flex items</li>
+            <li>The distinction is important as properties vary from flex item to flex containers</li>
+            <li>To designate an element as a flex container, the element's display property should be set to flex, or inline-flex</li>
+            <li>So, when an item is set to flex container, there are lots of properties you can use to specify how its children will behave.</li>
+            <li>The properties are
+                <ol>
+                    <li>Justify content</li>
+                    <li>Aligns-items</li>
+                    <li>Flex-grow</li>
+                    <li>Flex-shrink</li>
+                    <li>Flex-basis</li>
+                    <li>Flex</li>
+                    <li>Flex-wrap</li>
+                    <li>Align-content</li>
+                    <li>Flex-direction</li>
+                    <li>flex-flow</li>
+                </ol>
+            </li>
+        </ul>
+        <li>Flex items</li>
+
+    </ol>
+
+    <p>Flexbox shouldn't be used for the layout of an entire webpage. That is where grid comes in. People still use flexbox to layout an entire page though. It is not ideal, as you would have to nest lots of div elements, making it difficult to read</p>
+
+
+    <hr>
+    <h2>Display: flex</h2>
+
+
+    <p>Any element can be a flex container. These containers are helpful tools for creating websites that respond to changes in screen sizes.</p>
+    <p>Child elements of flex containers wil change in size and location in response to the size and position of their parent container</p>
+    <p>For an element to become a flex container, its display property must be set to flex.</p>
+
+    <p>A div with a class that has a property of display: flex, means that div is a flex container. If they have children, the children are flex items. Also, that div will remain block level, but its child elements will not begin on new lines.</p>
+
+    <div class="container1">
+        <div class="child1"></div>
+        <div class="child2"></div>
+        <div class="child3"></div>
+    </div>
+
+    <hr>
+    <h2>Inline-flex</h2>
+
+    <p>A div is a block level element. Giving it the value of display: flex, it still remained a block level element</p>
+    <p>What if we wanted multiple flex containers to display inline with each other?</p>
+
+    <p>To make div elements not block level, we would give its display property the value of inline.</p>
+    <p>Flexbox provides the inline-flex value for the display property, allowing us to create flex containers, that are inline to each other.</p>
+
+    
+        <div class="container2">
+            <div class='subContainer1'>
+                <p>I’m inside of a flex container!</p>
+                <p>A flex container’s children are flex items!</p>
+            </div>
+            <div class='subContainer2'>
+                <p>I’m also a flex item!</p>
+                <p>Me too!</p>
+            </div>
+        </div>
+
+      <p>This div, these are 2 container div. Without a width and inline-flex, each div would stretch the entire width of the page</p>
+      <p>The paragraphs within each div would also display on top of each other since paragraphs are block-level elements </p>
+      <p>Flex items shrink to accommodate the parents container size.</p>
+
+
+      <div class='container3'>
+        <div class='subContainer3'>
+          <h1>1</h1>
+          <h1>1</h1>
+          <h1>1</h1>
+        </div>
+        <div class='subContainer3'>
+          <h1>2</h1>
+          <h1>1</h1>
+          <h1>1</h1>
+        </div>
+      </div>
+
+      <p>A side note. When you make a div, inline-flex, it becomes the 'main' container and the elements inside it also becomes inline-flex. The main container has to have a width that is greater than the total width of all child elements. If not, the child elements will not be inline, but be block. Play around with the divs above to recall (if forgotten) </p>
+
+      <hr>
+      <h2>Justify Content</h2>
+
+      <p>When you change the display value of parent container to flex or inline-flex, all the child elements (flex items) moved towards the upper left corner of the parent container. This is the default behavior of flex container and their children.</p>
+      <p>Justify content helps how specify how flex item spread out form left to right. (main axis)</p>
+
+      <h4>Values for justify content</h4>
+
+      <table>
+        <tr>
+            <td>flex-start</td>
+            <td>All items positioned in order, starting from left of the parent container, with no extra space between or before them</td>
+        </tr>
+        <tr>
+            <td>flex-end</td>
+            <td>All items positioned in order, with the last item starting from right of the parent container, with no extra space between or before them</td>
+        </tr>
+        <tr>
+            <td>center</td>
+            <td>All items positioned in order, in the center of the parent container, no extra space between, before, or after them</td>
+        </tr>
+        <tr>
+            <td>space-around</td>
+            <td>All items positioned in order, in the center of the parent container, no extra space between, before, or after them</td>
+        </tr>
+        <tr>
+            <td>space-between</td>
+            <td>All items positioned in with equal space between them but no extra space before the first or after the last elements</td>
+        </tr>
+      </table>
+
+      <p>No extra space, means that margins and borders will be respected, but no more space  will be added in between elements. Other than it being specified in the style rule for the particular element.</p>
+      <p>The size of each individual flex item is not changed by this property</p>
+
+
+      <div class="container4">
+        <div class="subContainer4">1</div>
+        <div class="subContainer4">2</div>
+        <div class="subContainer4">3</div>
+        <div class="subContainer4">4</div>
+        <div class="subContainer4">5</div>
+      </div>
+
+      <hr>
+      <h2>Align items</h2>
+
+      <p>This property align flex items vertically within the container</p>
+      <p>The align-items property makes it possible to space flex items vertically</p>
+      <p>Here are values for the align items</p>
+
+      <table>
+        <tr>
+            <td>flex-start</td>
+            <td>All items positioned at the top of the parent container</td>
+        </tr>
+        <tr>
+            <td>flex-end</td>
+            <td>All items positioned at the bottom of the parent container</td>
+        </tr>
+        <tr>
+            <td>center</td>
+            <td>All items positioned at the center (halfway between the top and bottom) of the parent container</td>
+        </tr>
+        <tr>
+            <td>baseline</td>
+            <td>The bottom of the content of all items will be aligned with each other</td>
+        </tr>
+        <tr>
+            <td>stretch</td>
+            <td>If possible, the items will stretch from top to bottom of the container. ELements with a specified height will not stretch. Elements with a minimum height or no height specified, will stretch.</td>
+        </tr>
+      </table>
+
+      <p>These five values will tell the elements how to behave along the cross axis of the parent container.</p>
+      <p>Cross axis stretches from top to bottom of the container.</p>
+
+      <div class="container5">
+        <div class="subContainer5">1</div>
+        <div class="subContainer5">2</div>
+        <div class="subContainer5_1">3</div>
+        <div class="subContainer5">4</div>
+        <div class="subContainer5">5</div>
+      </div>
+
+      <p>The properties, min-height, max-height are properties that ensure an element is at least a certain size or at most.</p>
+
+      <hr>
+      <h2>Flex-grow</h2>
+
+      <p>Flex items shrink proportionally when the flex container is too small</p>
+      <p>But if the container is bigger than necessary, the flex items will not stretch by default</p>
+      <p>This is where flex-grow property allows us to specify if items should grow to fill a container, and which items should grow or shrink.</p>
+
+      <div class='container6'>
+        <div class='subContainer6'>
+          <h1>I’m on the side of the flex container!</h1>
+        </div>
+        <div class='subContainer6_1'>
+          <h1>I'm in the center of the flex container!</h1>
+        </div>
+        <div class='subContainer6'>
+          <h1>I'm on the other side of the flex container!</h1>
+        </div>
+      </div>
+
+      <p>If max-width is set for an element, it will not grow larger than that even if there is more space for it to absorb.</p>
+
+      <p>All items you have seen before are declared on flex containers, or parent elements. The property. flex-grow is the first we have seen declared on flex items.</p>
+
+      <hr>
+      <h2>Flex-shrink</h2>
+
+
+      <p>Just like flex-grow, flex shrink works the same way</p>
+      <p>When flex container is too small, flex items shrink, since the default value is 1</p>
+      <p>Flex items do not grow even if there is space since the default value for flex-grow is 0</p>
+
+
+      <div class="container7">
+        <div class="subContainer7"></div>
+        <div class="subContainer7_1"></div>
+        <div class="subContainer7"></div>
+      </div>
+
+
+      <p>Margins are unaffected by flex-grow, flex-shrink</p>
+      <p>Min and Max widths take precedence over flex-grow and flex-shrink</p>
+      <p>Flex-grow/shrink will onl work if the parent container is too small, or browser is adjusted</p>
+
+
+      <hr>
+      <h2>Flex-basis</h2>
+
+      <p>So far the dimensions of the divs were determined by heights and widths from CSS</p>
+      <p>Another way to specify the width of a flex item is with the flex-basis property.</p>
+      <p>Flex-basis allows you to specify the width of an item BEFORE, it stretches or shrinks</p>
+
+      <div class="container8">
+        <div class="subContainer8"></div>
+        <div class="subContainer8_1"></div>
+        <div class="subContainer8"></div>
+
+      </div>
+
+
+      <hr>
+      <h2>Flex</h2>
+
+      <p>This is shorthand property. this property allows you to declare flex-grow, flex-shrink, flex-basis in one line</p>
+
+      <p>If there is two values for flex, it is flex-grow and flex-shrink</p>
+
+      <p>Also if there is two values but the second one was a px, it is flex-grow and flex-basis</p>
+
+      <p>Note that there is no way to set only flex-shrink and flex-basis using 2 values</p>
+
+      <hr>
+      <h2>Flex-wrap</h2>
+      <p>IF we do not want our content to shrink to fit the container, and we want flex items to move to the next line when necessary. This is achievable with flex-wrap property</p>
+
+      <p>The value are:</p>
+      <ul>
+        <li>Wrap. Child elements of a flex container that don't fit in the row, will move to the next line</li>
+        <li>Wrap-reverse. Same functionality as wrap, but it just reverses.</li>
+        <li>Nowrap. Stops items from wrapping. This is the default behavior. Only used to override a wrap value.</li>
+      </ul>
+
+      <div class="container9">
+        <div class="subContainer9"></div>
+        <div class="subContainer9"></div>
+        <div class="subContainer9"></div>
+      </div>
+      <p>When flex items in total is wider than the flex container, using flex-wrap as wrap, it will appear on a new line.</p>
+
+      <hr>
+      <h2>Align-content</h2>
+
+      <p>Align-items property is to space flex items from top to bottom in a flex container</p>
+
+      <p>Align-items is for aligning elements within a single row</p>
+
+      <p>If a flex container has multiple rows of content, we can use align-content to space rows from top to bottom</p>
+
+      <p>Here are commonly used values for align-content</p>
+
+      <ul>
+        <li>flex-start</li>
+        <li>flex-end</li>
+        <li>center</li>
+        <li>space-between</li>
+        <li>space-around</li>
+        <li>stretch. If no min height or height is specified, the rows of elements will stretch</li>
+      </ul>
+
+      <div class="container10">
+        <div class="subContainer10"></div>
+        <div class="subContainer10"></div>
+        <div class="subContainer10"></div>
+        <div class="subContainer10"></div>
+        <div class="subContainer10"></div>
+    </div>
+
+
+    <p>Notice how the align-content property is declared on the flex containers. And how flex-wrap is used with align-content</p>
+
+
+    <hr>
+    <h2>Flex-direction</h2>
+
+    <p>Up to this point, we have only seen flex items stretch/shrink horizontally, wrap vertically</p>
+    <p>Flex containers have two axes. A main axis and a cross axis. By default, the main axis is horizontal, and the cross axis is vertical</p>
+
+    <p>The main axis is used to position flex items with the following properties</p>
+
+    <ul>
+        <li>Justify-content</li>
+        <li>Flex-wrap</li>
+        <li>Flex-grow</li>
+        <li>Flex-shrink</li>
+    </ul>
+
+    <p>The cross axis is used to position flex items with the following properties</p>
+
+    <ul>
+        <li>Align-items</li>
+        <li>Align-content</li>
+    </ul>
+
+    <p>The main axis and cross axis are interchangeable</p>
+    <p>They can be switched using the flex-direction property</p>
+    <p>giving the flex-direction a property of column, the flex items will be ordered vertically.</p>
+    <p>Giving it a value of column will just make the main axis and cross axis swap, meaning, the properties such as justify content will now be on the cross axis</p>
+
+    <div class="container11">
+        <div class="subContainer11"></div>
+        <div class="subContainer11"></div>
+        <div class="subContainer11"></div>
+        <div class="subContainer11"></div>
+        <div class="subContainer11"></div>
+        <div class="subContainer11"></div>
+    </div>
+
+    <p>Flex direction can accept four values.</p>
+
+    <ul>
+        <li>Row. Elements will be positioned from left to right</li>
+        <li>Row-reverse. Elements will be positioned from right to left</li>
+        <li>Column. Elements will be positioned from top to bottom.</li>
+        <li>Column-reverse. Elements will be positioned from bottom to top.</li>
+    </ul>
+
+    <p>Flex direction is declared on FLEX containers</p>
+
+    <hr>
+    <h2>Flex-flow</h2>
+
+    <p>Just like the flex property shorthand, flex-flow is a shorthand to declare both the flex-wrap, flex-direction properties in one line</p>
+
+    <p>The first value of flex-flow declaration is a flex-direction value, then a flex-wrap value.</p>
+
+    <p>Flex-flow property is declared on FLEX containers</p>
+
+    <hr>
+    <h2>Nested flexboxes</h2>
+
+    <p>We have seen multiple flex containers on the same page to explore flex item positioning</p>
+    <p>It is possible to position flex containers inside of one another</p>
+
+    <div class="container12">
+        <div class="container13">
+            <h1>Get</h1>
+            <h1>Planche</h1>
+        </div>
+        <div class="container14">
+            <h1>Get</h1>
+            <h1>70kg</h1>
+        </div>
+    </div>
+
+    <hr>
+    <h2>Quiz</h2>
+
+    <p>What is the difference between the align-content property and the align-items property? You can assume that flex-direction is its default value, row</p>
+
+    <p>The align-items property is used to align items within a single row, whereas teh align-content property is used to align multiple rows</p>
+
+    <p>what is the align-items property used for?</p>
+    <p>To align flex items on the cross axis</p>
+
+</body>
+</html>

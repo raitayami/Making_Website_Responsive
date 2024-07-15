@@ -1,0 +1,267 @@
+.mainContainer{
+    width: 600px;
+    border: 3px solid tan;
+    background-color: cadetblue;
+}
+
+table{
+    border: 2px solid gray;
+    border-collapse: collapse;
+
+}
+
+td{
+    border: 2px solid gray;
+}
+  
+
+
+/* display:flex */
+
+.container1{
+    width: 1000px;
+    height:300px;
+    display: flex;
+    border: 3px solid saddlebrown;
+    background-color: firebrick;
+}
+
+.child1{
+    width: 200px;
+    border: 3px solid green;
+    background-color: cadetblue;
+}
+
+.child2{
+    width: 200px;
+    border: 3px solid green;
+    background-color: violet;
+}
+
+.child3{
+    width: 200px;
+    border: 3px solid green;
+    background-color: palegreen;
+}
+
+
+/* display:inline-flex */
+
+
+
+.subContainer1{
+    display: inline-flex;
+    width: 200px;
+    height: 100px;
+    border: 3px solid peru;
+}
+
+.subContainer2{
+    display: inline-flex;
+    width: 200px;
+    height: 100px;
+    border: 3px solid darkblue;
+}
+
+
+.container3{
+    width: 400px;
+    /* display: inline-flex; */
+
+}
+
+.subContainer3{
+    display: inline-flex;
+    width: 300px;
+    height: auto;
+    border: 3px solid darkcyan;
+}
+
+/* justify-content */
+
+.container4{
+    display: flex;
+    width: 1000px;
+    height: 200px;
+    background-color: antiquewhite;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+.subContainer4{
+    border: 3px solid black;
+    width: 150px;
+}
+
+/* align items */
+
+
+.container5{
+    display: flex;
+    width: 1000px;
+    height: 200px;
+    background-color: darkkhaki;
+    align-items: baseline;
+    
+    /* it still in justify content - flex start by default btw */
+}
+
+.subContainer5{
+    border: 3px solid black;
+    width: 150px;
+}
+
+.subContainer5_1{
+    border: 3px solid black;
+    width: 150px;
+    height: 100px;
+}
+
+/* flex grow */
+
+.container6{
+    display: flex;
+    background-color: black;
+    width: 600px;
+    
+}
+  
+.subContainer6 {
+    width: 100px;
+    background-color: wheat;
+    flex-grow: 1;
+}
+  
+.subContainer6_1 {
+    width: 100px;
+    color: white;
+    flex-grow: 3;
+}
+
+.subContainer6 {
+    width: 100px;
+    background-color: blue;
+    flex-grow: 1;
+
+} 
+
+/* flex shrink */
+
+.container7{
+    width: 1000px;
+    height:200px;
+    display: flex;
+    background-color: aqua;
+}
+
+.subContainer7{
+    width: 100px;
+    background-color: black;
+    flex-grow: 2;
+
+}
+
+.subContainer7_1{
+    width: 200px;
+    background-color: gold;
+    flex-grow: 1;
+}
+
+/* flex-basis */
+
+
+.container8{
+    width: 1000px;
+    height:200px;
+    display: flex;
+    background-color: firebrick;
+    
+}
+
+.subContainer8{
+    width: 100px;
+    background-color: rgb(217, 116, 116);
+    flex-basis: 200px;
+    flex-shrink: 2;
+}
+
+.subContainer8_1{
+    width: 100px;
+    background-color: salmon;
+    flex-basis: 300px;
+}
+
+/* flex wrap */
+
+.container9{
+    width: 800px;
+    height:400px;
+    display: flex;
+    background-color: fuchsia;
+    flex-wrap: wrap;
+}
+
+.subContainer9{
+    width: 300px;
+    height: 200px;
+    border: 2px dotted black;
+}
+
+/* align-content */
+
+.container10{
+    width: 1000px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    background-color: blue;
+}
+
+.subContainer10{
+    width: 300px;
+    height: 100px;
+    border: 1px solid white;;
+    background-color: green;
+}
+
+/* flex-direction */
+
+.container11{
+    width: 1000px;
+    height: 500px;
+    display: flex;
+    background-color: firebrick;
+    flex-direction: column;
+}
+.subContainer11{
+    width: 100px;
+    height: 100px;
+    border: 1px solid yellow;
+    background-color: black;
+}
+
+/* nested flexbox */
+
+.container12{
+    width: 600px;
+    height: 500px;
+    display: flex;
+    background-color: yellow;
+}
+
+.container13{
+    min-width: 250px;
+    height:200px;
+    background-color: green;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.container14{
+    min-width: 250px;
+    height:200px;
+    background-color: white;
+    display: inline-flex;
+
+}
