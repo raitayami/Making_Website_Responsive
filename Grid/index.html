@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>GRID ESSENTIALS</h1>
+
+    <h2>Introduction to grids</h2>
+    <p>The Box Model, Display and Positioning explain some possible ways to style layout</p>
+    <p>The grid can be used to layout entire web pages.</p>
+    <p>Flexbox is mostly useful for positioning items in a 1d layout</p>
+
+    <hr>
+    <h2>Creating a grid</h2>
+
+    <p>To set up a grid, you need to have both, a grid container and grid items</p>
+
+    <p>The grid container will be a parent element that contains grid items as children</p>
+    <p>To turn a HTML element into a grid container, you have to set the element's display property to one of the two values. grid - for a block-level grid. inline-grid - for an inline grid</p>
+
+    <div class="grid1">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <div class="box box5">5</div>
+    </div>
+
+    <hr>
+    <h2>Creating columns</h2>
+
+    <p>By default, grids contain only one column. If you were to start adding items, each item would be put on a new row. To add columns, you need to explicitly define teh number of rows, columns in the grid</p>
+
+    <p>You can define the columns for the grid by using the CSS property, grid-template-columns.</p>
+
+    <p>Below is an example</p>
+
+    <div class="grid2">
+        <div class="box box6"></div>
+        <div class="box box7"></div>
+        <div class="box box8"></div>
+        <div class="box box9"></div>
+    </div>
+
+    <p>Looking at the styles page. there are two values, so two columns. Each column has its width. You can use percentages as well as pixels,and you can use both.</p>
+
+    <p>We will learn how to handle overflow if the sum of with column's width exceeds the width of the grid</p>
+
+    <hr>
+    <h2>Creating Rows</h2>
+
+    <p>To specify the number and size of rows, we are going to use the property grid-template-rows</p>
+
+    <div class="grid3">
+        <div class="box box10"></div>
+        <div class="box box11"></div>
+        <div class="box box12"></div>
+        <div class="box box13"></div>
+        <div class="box box14"></div>
+        <div class="box box15"></div>
+    </div>
+
+    <p>When using percentages in the specifying of rows/columns properties, remember that rows are defined as a percentages of grid's height, columns are defined as a percentage of grid's width
+    </p>
+
+    <hr>
+    <h2>Grid Template</h2>
+
+    <p>This is a shorthand property. Grid-template can replace the previous two CSS properties.</p>
+
+    <p>When using grid-template, the values before the slash determines the size of each row. The values after determines the size of each column.</p>
+
+    <hr>
+    <h2>Fraction</h2>
+
+    <p>As you have seen a few types of responsive units, such as %, em and rem. CSS Grid introduces a new relative sizing unit - fr (fraction)</p>
+
+    <p>Using fr unit, we can define the size of columns, and rows, as a fraction of the grid's length and width. This unit was specifically created for use in CSS grid</p>
+
+
+    <p>Using fr makes it easier to prevent grid items from overflowing the boundaries of the grid</p>
+
+    <div class="grid4">
+        <div class="box box16">250px height - 80px width</div>
+        <div class="box box17"> 250px height - 240px width</div>
+        <div class="box box18">250px height - 80px width</div>
+        <div class="box box19">125px height - 80px width</div>
+        <div class="box box20">125px height - 240px width</div>
+    </div>
+
+    <p>The example above, has 3 rows and 3 columns.</p>
+    <p>The rows are splitting up the available 400 pixels of height into 4 parts. First row gets 2 of those part, second and third gets one each.</p>
+
+    <p>Each column's width is a fraction of the available space</p>
+    <p>Just think, of the space is being split into parts (the fr)</p>
+
+    <p>You can mix and match the units together, a set of columns can be described in fr, %, px</p>
+
+    <hr>
+    <h2>Repeat</h2>
+
+    <p>repeat() is a function. It can duplicated the specifications for rows or columns, a given number of times</p>
+
+    <p>Instead of writing 100px 100px 100px (which specifies three columns to be each 100px wide), you can do repeat(3, 100px)</p>
+
+    <p>You can include a second parameter too, so repeat(2, 20px, 50px)</p>
+    <p>This will create 4 columns, where the first and third is 20px wide, second and fourth is 50px wide</p>
+
+    <p>You can use it with fr too</p>
+
+    <div class="grid5">
+        <div class="box box21"></div>
+        <div class="box box22"></div>
+        <div class="box box23"></div>
+        <div class="box box24"></div>
+        <div class="box box25"></div>
+        <div class="box box26"></div>
+        <div class="box box27"></div>
+        <div class="box box28"></div>
+        <div class="box box29"></div>
+        <div class="box box30"></div>
+    </div>
+
+    <hr>
+    <h2>Minmax</h2>
+
+    <p>Sometimes you might want a grid to resize based on the size of your web browser</p>
+
+    <p>Situations such as preventing a row or column from getting to big or small.</p>
+
+    <p>100px minmax(100px, 500px) 100px</p>
+
+    <p>The value above tells us that the 1st and 3rd columns will always be 100px wide, no matter the size of the gird. But the second column will vary in size as the overall grid resizes. The second column will always be between 100 and 500 px wide.</p>
+
+    <div class="grid6">
+            <div class="box box31"></div>
+            <div class="box box32"></div>
+            <div class="box box33"></div>
+            <div class="box box34"></div>
+            <div class="box box35"></div>
+            <div class="box box36"></div>
+            <div class="box box37"></div>
+            <div class="box box38"></div>
+            <div class="box box39"></div>
+            <div class="box box40"></div>
+    </div>
+
+
+    <hr>
+    <h2>Grid Gap</h2>
+
+    <p>So far in our grids, there hasn't been any space between the items in our grid. Row-gap or column-gap will put blank space between every row or column in the grid</p>
+
+    <p>There is also a shorthand property, gap. It doesn't have the slash like other shorthand properties. The first specifies the row gap, then the column gap. If only one value is given, it will set both the column and row gap to that value</p>
+
+
+    <hr>
+    <h2>Grid Items</h2>
+
+    <p>so far the examples we have used, each item in the grid has taken up one square. This does not always need to be the case. We can drastically change the look of the grid by making the grid item take up more than one row or one column.</p>
+
+    <hr>
+    <h2>Multiple Row Items</h2>
+
+    <p>Grid-row-start or grid-row-end, we can make a single grid item take up multiple rows. WE ARE NOT APPLYING TO THE GIRD CONTAINER BUT RATHER, ADDING CSS TO THE ITEM IN THE GRID</p>
+
+    <p>For example. If a grid has 5 rows, the grid row lines range from 1 to 6.</p>
+    <p>The value of grid-row-start should be the row at which you want the grid item to begin. The value for grid-row-end should be one greater than the row at which you want the grid item to end. Therefore, an element that covers rows 2,3,4 should have declarations such as grid-row-start: 2, grid-row-end: 5</p>
+
+    <p>It is possible for the value of grid-row-start to be greater than grid-row-end, it will still cover, but look awkward on the declarations. they can also have negative values, check the MDN docs</p>
+
+
+    <div class="grid7">
+        <div class="box box41"></div>
+        <div class="box box42"></div>
+        <div class="box box43"></div>
+        <div class="box box44"></div>
+        <div class="box box45"></div>
+    </div>
+
+    <hr>
+    <h2>Grid Row</h2>
+
+    <p>We can use grid-row as a shorthand for grid-row-start and grid-row-end</p>
+    <p>The starting row goes before the / and the ending row goes after it.</p>
+
+    <p>It shall include the gap measurements too if it exists. An item spanning two rows of height 100px each with a 10px gap, the item will be a total height of 210 px</p>
+
+    <hr>
+    <h2>Grid Column</h2>
+
+    <p>Same for grid-column</p>
+    <p>when using these properties, you can use keyword span to start or end a column or row</p>
+
+    <p>grid-column: 4 / span 2. this code tells us the item begins in column 4,takes up 2 columns of space. thus item occupies columns 4 and 5</p>
+
+    <p>Span helps us avoid errors when determining the ending of the grid line. If you know where you wan your grid item to start and how long it should be, use span.</p>
+    
+    <hr>
+    <h2>Grid Area</h2>
+
+    <p>This is a shorthand for all of the grid-row/column-start/end property</p>
+
+    <p>Grid area takes four values. First value, grid-row-start, second value, grid-colum-start, third value, grid-row-end, fourth value, grid-column-end</p>
+
+    <p>grid-area: 2 / 3 / 4 / span 5</p>
+
+    <p>The item will start row 2 and end row 4. row 4 is not included though, only 2 and 3. the item also start on column 3 spanning 5 columns, so 3,4,5,6,7.</p>
+
+
+    <hr>
+    <h2>Review</h2>
+
+    <div class="grid8">
+        <div class="box a"></div>
+        <div class="box box47"></div>
+        <div class="box box48"></div>
+        <div class="box box50"></div>
+        <div class="box box51"></div>
+        <div class="box box51"></div>
+        <div class="box box52"></div>
+        <div class="box box53"></div>
+        <div class="box box54"></div>
+        <div class="box box55"></div>
+    </div>
+
+
+
+</body>
+</html>
