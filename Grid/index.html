@@ -230,6 +230,196 @@
         <div class="box box55"></div>
     </div>
 
+    <hr>
+    <h1>Advanced CSS Grid</h1>
+
+    <h2>Introduction</h2>
+
+    <h3>Codecademy example: </h3>
+
+    <div class="container">
+        <header><h1>Header</h1></header>
+        <nav><h1>Nav</h1></nav>
+        <section class="left"><h2>Left</h2></section>
+        <section class="right"><h2>Right</h2></section>
+        <footer><h1>Footer</h1></footer>
+    </div>
+
+
+    <h3>My example:</h3>
+
+    <div class="container2">
+        <header><h1>Calisthenics</h1></header>
+        <nav><h1>List Of Nav Bars</h1></nav>
+        <section class="mainContent"><h1>Carousel</h1></section>
+        <section class="testimonial1"><h2>Testimonial 1</h2></section>
+        <section class="testimonial2"><h2>Testimonial 2</h2></section>
+        <section class="testimonial3"><h2>Testimonial 3</h2></section>
+        <section class="callToAction"><h3>A Form</h3></section>
+    </div>
+
+    <hr>
+    <h2>Overlapping Elements</h2>
+
+    <p>Using z-index. you can overlap elements. Also i don't know why they used 5 in the example.</p>
+
+    <hr>
+    <h2>Justify Items</h2>
+
+    <p>There are two axes in the grid layout. The column or block axis. The row or inline axis.</p>
+
+    <p>The column axis stretches from top to bottom across the web page</p>
+    <p>The row axis stretches from left to right across the web page</p>
+
+    <p>Justify items positions grid items along the inline or row axis.</p>
+    <p>This means it positions items from left to right across the web page</p>
+
+    <p>This property is declared on grid containers</p>
+
+    <ul>
+        <li>Start. Aligns grid items to the left side of the grid area</li>
+        <li>End. Aligns grid items to the right side of the grid area</li>
+        <li>Center. Aligns grid items to the center of the grid area</li>
+        <li>Stretch. Stretches all the  grid items to fill the grid area</li>
+        <li>There are more values and it can be found on MDN. These are the main ones listed above</li>
+    </ul>
+
+    <section class="container3">
+        <div class="card card1">Card 1</div>
+        <div class="card card2">Card 2</div>
+        <div class="card card3">Card 3</div>
+
+    </section>
+
+    <hr>
+    <h2>Justify Content</h2>
+
+    <p>In this exercise we will learn how to position a grid within its parent element</p>
+
+    <p>We can use justify-content to position the entire grid along the row axis. This property is declared on grid containers</p>
+
+    <p>The values it accepts are:</p>
+    <ul>
+        <li>Start. Aligns grid to the left side of the grid container</li>
+        <li>End. Aligns grid to the right side of the grid container</li>
+        <li>Center. Centers the grid horizontally in the grid container</li>
+        <li>Stretch. Stretches the grid items to increase the size of the grid to expand horizontally across the container</li>
+        <li>Space-around. Includes an equal amount of spae on each side of a grid element</li>
+        <li>Space-between. Includes an equal amount of space between grid items and no space at either end</li>
+        <li>Space-evenly. Places an even amount of space between grid items and at either end</li>
+
+    </ul>
+
+    <section class="container4">
+        <div class="left2">Left</div>
+        <div class="right2">Right</div>
+    </section>
+
+    <hr>
+    <h2>Align Items</h2>
+    <p>Align items shows us how to position grid items from top to bottom</p>
+    <p>Align-items is a property that positions grid items along the block/column axis. It is declared on grid containers</p>
+    
+    <p>The values it accepts are:</p>
+    <ul>
+        <li>Start. Aligns grid items to the top side of the grid area</li>
+        <li>End. Aligns grid items to the bottom side of the grid area</li>
+        <li>Center. Aligns grid items to the center of the grid area</li>
+        <li>Stretch. Stretches all items to fill the grid area</li>
+
+    </ul>
+
+    <hr>
+    <h2>Align Content</h2>
+
+    <p>Same as Justify Content, but top to bottom.</p>
+
+    <hr>
+    <h2>Justify Self and Align Self</h2>
+
+    <p>The justify-items and align-items properties specify how all grid items contained within a single container will position themselves along the row and column axes.</p>
+
+    <p>Justify-self specifies how an individual element should position itself with respect to the row axis. This property overrides justify-items for any item on which it is declared. Align self the same but respect to the column axis.</p>
+
+    <p>These properties are declared on grid items.</p>
+
+    <ul>
+        <li>Start. Positions grid items on the left side/top of the grid area</li>
+        <li>End. Positions grid items on the right side/bottom of the grid area</li>
+        <li>Center. Positions grid items on the center of the grid area</li>
+        <li>Stretch. Positions grid items to fill the grid area</li>
+
+    </ul>
+
+
+    <hr>
+    <h2>Implicit vs Explicit Grid</h2>
+
+    <p>So far we have been explicitly defining the dimensions and quantities of our grid elements using various properties</p>
+    <p>There will be instances where we don't know how much information we are going to display.</p>
+
+    <p>this is where implicit grid comes in handy. Implicit grid is an algorithm built into the specification for CSS Grid, that determines default behavior for the placement of elements</p>
+
+    <p>The default behavior of the implicit grid is, items fill up the rows first, adding new rows as necessary. New rows will be tall enough to contain the content within them.</p>
+
+    <hr>
+    <h2>Grid Auto Rows, Grid Auto Columns</h2>
+
+    <p>CSS Grid provides two properties to specify the size of grid tracks added implicitly. Grid-auto-rows, grid-auto-columns. These properties are declared on grid containers</p>
+
+    <p>Grid-auto-rows specifies the height of implicitly added grid rows.</p>
+    <p>Grid-column-rows specifies the width of implicitly added grid columns.</p>
+
+    <p>The values accepted are, px, %, fr, repeat()</p>
+
+    <section class="container5">
+        <div class="part part1">Part 1</div>
+        <div class="part part2">Part 2</div>
+        <div class="part part3">Part 3</div>
+        <div class="part part4">Part 4</div>
+        <div class="part part5">Part 5</div>
+    </section>
+
+    <hr>
+    <h2>Grid Auto Flow</h2>
+
+    <p>In addition to setting the dimensions of implicitly-added rows and columns, we can specify the order in which they are rendered</p>
+
+    <p>Grid-auto-flow specifies whether new elements should be added to rows or columns, and it is declared on containers</p>
+
+    <p>The values that are accepted are:</p>
+    <ul>
+        <li>Row - specifies the new elements should fill rows from left to right and create new rows when there are too many elements (default).</li>
+        <li>Column - specifies the new elements should fill columns from top to bottom, and create new columns when there are too many elements</li>
+        <li>Dense - this keywords invokes an algorithm that attempts to fill holes earlier in the grid layout if smaller elements are added.</li>
+        <li>You can pair row dense like this, or column dense like this.</li>
+    </ul>
+
+
+    <hr>
+    <h2>Quiz</h2>
+
+    <p>Question 1</p>
+
+    <p>Imagine we have a grid with 2 explicitly defined rows and 2 explicitly defined columns and no other grid properties set in the CSS, with the following divs inside of it. If we added a div, with class box, called E, to the HTML after box D, where would box E appear on the page?</p>
+
+    <p>Imagine there is 4 divs, each with class box, the names are ranging from A, B, C, D</p>
+
+    <p>It would appear underneath box C in a new row. the default is for the grid to implicitly create new rows, unless grid-auto-flow specifies it sets to column</p>
+
+    <p>Question 2</p>
+
+    <p>Which justify-content value would you use to have an even amount of space between the grid items, with half-sized spaces on the far ends?</p>
+
+    <p>Space around. (space-evenly puts a full space at each end)</p>
+
+    <p>Question 3</p>
+
+    <p>Imagine we have a grid with 4 items in it, with the following CSS properties. What width would the 3rd column be?</p>
+
+    <p>the grid has property of grid-auto-columns: 100px 200px, and grid-auto-flow: columns</p>
+
+    <p>100px because the boxes will fill up implicitly created columns which alternate between being 100px and 200px. Odd rows will be 100px in size.</p>
 
 
 </body>
