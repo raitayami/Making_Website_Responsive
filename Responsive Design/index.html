@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design</title>
+</head>
+<body>
+    <h1>Responsive Design</h1>
+
+    <h2>Relative Measurements</h2>
+
+    <p>How can we ensure that a website is readable and visually appealing across all devices, regardless of screen size?</p>
+    <p>The answer is, responsive design. This refers to the ability of a website to resize and reorganize its content based on, the size of other content on the website, and the size of the screen the website is being viewed on</p>
+
+    <p>In this lesson, we will size HTML content relative to other content on a website</p>
+
+    <p>You have noticed the unit, px or pixels. PRoblem with this is, it is hard coded value. A screen size changing, will causes elements that are px value, to either appear small, overflow, or just completely illegible.</p>
+
+    <p>Using CSS, you can avoid hard coded measurements, and use relative measurements, resulting in a website to having elements that are more intact, regardless of the screen size or layout.</p>
+
+    <hr>
+    <h2>EM</h2>
+
+
+    <p>The em represents the font-size of the current element or the default based font-size set by the browsers if none is given. For example, if the base font of a browser is 16 pixels, then 1 em is equal to 16 pixels. 2 ems would be 32 pixels and so on</p>
+
+    <p>Imagine a div with a class called, container1, and it was given a font-size of 18px. Then this would be the base font size for everything that is in this div. Any elements within it, such as a h1, you can size it with em such as 1.5em, which means it would result in all h1 having font size of (27px). Just for all the h1s.</p>
+
+
+    <hr>
+    <h2>REM</h2>
+
+    <p>Rem stands for root em. This is similar to em however instead of checking for the parent element font size, it check the root element (the html tag)</p>
+
+    <p>Most browsers set the font size of html tag to 16, thus by default rem measurements will be compared to that value. To change the base font value of 16 to what you want, simply add it in your css code, using the html selector</p>
+
+
+    <p>Sizing elements consistently across an entire websites, the rem is good one, but sizing elements in comparison to other elements nearby, using em.</p>
+
+    <hr>
+    <h2>Percentages: Height and Width</h2>
+
+    <p>To size non-text HTML elements relative to their parent elements on the page, you can use percentages.</p>
+
+    <p>Percentages are often used to size box-model values, width and height, padding, border, margin. They can also be used to set positioning properties (top,bottom, left, right).</p>
+
+    <p>When percentages are used, elements are sized relative to the dimensions of their parent element. Set the dimensions of the parent element first, then the child elements.</p>
+
+    <p>As the box model includes padding, border, margins, setting an element's width to 100% can cause content to overflow its parent container. While temping, 100% should only be used when content wil not have padding, border, or margin.</p>
+
+
+    <hr>
+    <h2>Percentages: Padding and margin.</h2>
+
+    <p>You learned that, when height and width are set using percentages, the dimensions of child elements are calculated based on the dimensions of the parent element</p>
+
+    <p>When percentages are used to set padding and margin, they are calculated based only on the width of the parent element</p>
+
+    <p>For example, when a property like margin-left is set using %, (ie 50%), the element will be moved halfway to the right in the parent container (as opposed to the child element receiving a margin, half of its parent's margin)</p>
+
+    <p>Note, when using relative sizing, ems and rems should be used to size text and dimensions on the page related to the text size (padding around text). This creates a consistent layout based on text size, otherwise, percentages should be used.</p>
+
+    <hr>
+    <h2>Width: Minimum and Maximum</h2>
+
+    <p>You can limit how wide an element becomes with the following properties</p>
+
+    <p>Min-width, ensures a minimum width for an element</p>
+    <p>Max-width, ensures a maximum width for an element</p>
+
+
+    <hr>
+    <h2>Height: Minimum and Maximum</h2>
+
+    <p>Min-height, ensures a minimum width for an element</p>
+    <p>Max-height, ensures a maximum width for an element</p>
+
+    <hr>
+    <h2>Scaling Images and Videos</h2>
+
+    <p>.container {
+        width: 50%;
+        height: 200px;
+        overflow: hidden;
+      }
+      
+      .container img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }</p>
+
+
+      <p>Take this code for example.</p>
+
+      <p>The first rule states:</p>
+      <ul>
+        <li>.container represents a div</li>
+        <li>Width is set to 50%, half of the browser's width</li>
+        <li>Height of 200px</li>
+        <li>overflow is set to hidden, ensuring that any content with dimensions larger than the container, will be hidden from view</li>
+      </ul>
+      
+      <p>The second rule states:</p>
+      <ul>
+        <li>The image scale with teh width of the container</li>
+        <li>The height is set to auto, meaning an image's height will automatically scale proportionally with the width</li>
+        <li>The last line displays images as block level, rather than inline-block (the default state)</li>
+      </ul>
+
+      <p>Note, the example just used, scales the width of the an image or video, to the width of a container. If the image is larger than the container, the vertical portion of the image will overflow and will not display. To swap this behavior, you cans et max-height to 100% and width to auto. Therefore this will scale the height of the image with the height of the container instead. If the image is larger than the container, the horizontal portion of the image will overflow and not display.</p>
+
+      <hr>
+      <h2>Scaling background images</h2>
+
+      <p>body {
+        background-image: url('#');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }</p>
+
+      <p>The example above, first line, sets background image to a url. Second line declares the compiler to not repeat the image as images repeat by default. Third line centers the image within the element. Final line scale the background image. The image covers the entire background of the element. All keeping the image in proportion. If it exceeds the dimensions of the container, then only a portion of the image will display.</p>
+      
+
+    
+
+</body>
+</html>
